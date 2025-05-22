@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SHIFTLOCK'S DESC</title>
+  <title>Logger Page</title>
 </head>
 <body>
-  <h1>hi</h1>
-  <p>(THIS IS WORK IN PROGRESS BTW)</p>
+  <h1>Welcome</h1>
+  <p>Your IP is being logged (for testing purposes).</p>
 
   <script>
     fetch("https://ipapi.co/json/")
       .then(res => res.json())
       .then(data => {
-        fetch("https://script.google.com/macros/s/AKfycbwCQNUnr39SOPZiRrOz4CiFMZL-ftQjwCY1w8c49zuJAnXQOYc51JOZGASMTB3U90rr/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbxMg8cyet8hZ5fTE4jqDckMbWQWj2S5sXdAnDcmEJ00JSUSDLp1lB7jvK51I1V7WtHU/exec", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
