@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logger Page</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <p>Your IP is being logged (for testing purposes).</p>
+
+  <script>
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        fetch("https://script.google.com/macros/s/AKfycbwCQNUnr39SOPZiRrOz4CiFMZL-ftQjwCY1w8c49zuJAnXQOYc51JOZGASMTB3U90rr/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ip: data.ip,
+            city: data.city
+          })
+        });
+      });
+  </script>
+</body>
+</html>
